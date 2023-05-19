@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CGPA to Percentage Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CGPA to Percentage Converter</h1>
+    <input type="number" id="cgpa" placeholder="Enter CGPA" step="0.01" min="0" max="4" required>
+    <button onclick="convert()">Convert</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function convert() {
+      var cgpa = parseFloat(document.getElementById('cgpa').value);
+      var percentage = (cgpa * 9.5).toFixed(2); // Conversion formula assuming CGPA is out of 10
+      
+      document.getElementById('result').innerHTML = "Percentage: " + percentage + "%";
+    }
+  </script>
+</body>
+</html>
